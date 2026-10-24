@@ -1,35 +1,40 @@
 # Nix
 
-Privacy-first, highly customizable browser. Initial target: macOS using SwiftUI/AppKit + WKWebView, with portable privacy logic in Rust.
+Nix is a privacy-first, customizable browser project. The current prototype explores a native macOS browsing experience using SwiftUI and WebKit, with a Rust core planned for reusable privacy and filtering logic.
 
-## Current status
+## Purpose
 
-This repository is a foundation/scaffold, not a production-ready browser. The Rust `core-shields` crate parses a deliberately limited, documented subset of ABP rules and emits WebKit content-blocker JSON. The Swift macOS shell includes a native window, tabs, address field, navigation, per-tab `WKWebView`, and a Shields status panel. Full ABP/uBO compatibility, production list ingestion, hardened user scripts, sync, and the rest of the master specification remain future work.
+The goal is to build a browser that gives users control over tracking, page clutter, browser layout, and site-specific behavior without sacrificing a polished native experience.
 
-## Requirements
+## Why this is being built
 
-- macOS 14+ (minimum OS policy is latest major minus one; update deployment target when validating the release target)
-- Xcode with Swift 5.9+
-- Rust stable toolchain and Cargo
-- Git
+- Learn and implement native macOS browser architecture with SwiftUI, AppKit, and WKWebView.
+- Build a portable Rust core for URL cleaning and content-filter rule compilation.
+- Add privacy protections that are transparent and user-configurable.
+- Explore a customizable browser interface with a native macOS look and feel.
+- Keep platform-specific rendering behind an adapter boundary so other platforms can be considered later.
 
-## Build and test
+## Current prototype
+
+- Native macOS window and WebKit page rendering.
+- Basic tab creation, switching, closing, address/search field, and navigation controls.
+- Safari-inspired top toolbar and glass-like tab surfaces using system materials.
+- Initial Rust ABP-subset parser and WebKit JSON emitter, not yet connected to the app.
+
+## Important status
+
+This is an early development prototype. The Shields UI is not yet enforcing blocking rules; Rust-to-Swift integration, full filter-list compatibility, persistence, sync, and iOS support are not implemented. Build and test on macOS with Xcode before relying on any feature.
+
+## Build
+
+Open `apps/Nix.xcodeproj` in Xcode, choose the Nix scheme and **My Mac**, then press `⌘R`.
+
+Rust core tests can be run from the repository root where Rust is installed:
 
 ```sh
 cargo test --workspace
-cargo clippy --workspace --all-targets -- -D warnings
-open apps/Nix.xcodeproj
 ```
 
-Open the Xcode project and run the `Nix` macOS scheme. This scaffold does not claim to have been built on macOS in this environment.
+## License
 
-## Layout
-
-- `apps/macos/` — SwiftUI macOS application source
-- `packages/` — reserved for reusable Swift packages
-- `crates/core-shields/` — portable ABP subset parser and WebKit JSON emitter
-- `docs/adr/` — architecture decision records
-- `docs/threat-model/` — initial STRIDE threat model
-- `docs/design/` — design principles
-- `docs/licenses/` — third-party list/license tracking
-- `.github/workflows/` — Rust CI starter
+MPL-2.0. Third-party filter lists must be reviewed and attributed according to their own licenses before bundling.
