@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["crates/core-shields"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MPL-2.0"
+rust-version = "1.75"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"

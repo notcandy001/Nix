@@ -1,0 +1,29 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
+ objects = {
+  A00000000000000000000001 /* Project object */ = { isa = PBXProject; attributes = { LastUpgradeCheck = 1500; }; buildConfigurationList = A00000000000000000000010; compatibilityVersion = "Xcode 14.0"; mainGroup = A00000000000000000000002; productRefGroup = A00000000000000000000004; projectDirPath = ""; projectRoot = ""; targets = (A00000000000000000000005, ); };
+  A00000000000000000000002 = { isa = PBXGroup; children = (A00000000000000000000003, A00000000000000000000004, ); sourceTree = "<group>"; };
+  A00000000000000000000003 /* Sources */ = { isa = PBXGroup; children = (A00000000000000000000011, A00000000000000000000012, A00000000000000000000013, ); path = macos; sourceTree = "<group>"; };
+  A00000000000000000000004 /* Products */ = { isa = PBXGroup; children = (A00000000000000000000006, ); name = Products; sourceTree = "<group>"; };
+  A00000000000000000000005 /* Nix */ = { isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000014; buildPhases = (A00000000000000000000020, A00000000000000000000021, ); buildRules = (); dependencies = (); name = Nix; productName = Nix; productReference = A00000000000000000000006; productType = "com.apple.product-type.application"; };
+  A00000000000000000000006 /* Nix.app */ = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+  A00000000000000000000011 /* NixApp.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NixApp.swift; sourceTree = "<group>"; };
+  A00000000000000000000012 /* BrowserWindow.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserWindow.swift; sourceTree = "<group>"; };
+  A00000000000000000000013 /* EngineAdapter.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineAdapter.swift; sourceTree = "<group>"; };
+  A00000000000000000000030 /* NixApp.swift in Sources */ = { isa = PBXBuildFile; fileRef = A00000000000000000000011; };
+  A00000000000000000000031 /* BrowserWindow.swift in Sources */ = { isa = PBXBuildFile; fileRef = A00000000000000000000012; };
+  A00000000000000000000032 /* EngineAdapter.swift in Sources */ = { isa = PBXBuildFile; fileRef = A00000000000000000000013; };
+  A00000000000000000000020 /* Sources */ = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000030, A00000000000000000000031, A00000000000000000000032, ); runOnlyForDeploymentPostprocessing = 0; };
+  A00000000000000000000021 /* Frameworks */ = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  A00000000000000000000010 = { isa = XCConfigurationList; buildConfigurations = (A00000000000000000000015, A00000000000000000000016, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+  A00000000000000000000014 = { isa = XCConfigurationList; buildConfigurations = (A00000000000000000000017, A00000000000000000000018, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+  A00000000000000000000015 = { isa = XCBuildConfiguration; buildSettings = { MACOSX_DEPLOYMENT_TARGET = 14.0; }; name = Debug; };
+  A00000000000000000000016 = { isa = XCBuildConfiguration; buildSettings = { MACOSX_DEPLOYMENT_TARGET = 14.0; }; name = Release; };
+  A00000000000000000000017 = { isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = dev.nix.browser; PRODUCT_NAME = Nix; SWIFT_VERSION = 5.0; MACOSX_DEPLOYMENT_TARGET = 14.0; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = Nix; }; name = Debug; };
+  A00000000000000000000018 = { isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = dev.nix.browser; PRODUCT_NAME = Nix; SWIFT_VERSION = 5.0; MACOSX_DEPLOYMENT_TARGET = 14.0; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = Nix; }; name = Release; };
+ };
+ rootObject = A00000000000000000000001;
+}
