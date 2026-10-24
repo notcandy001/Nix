@@ -35,6 +35,3 @@ Rust core tests can be run from the repository root where Rust is installed:
 cargo test --workspace
 ```
 
-## License
-
-MPL-2.0. Third-party filter lists must be reviewed and attributed according to their own licenses before bundling.
